@@ -43,8 +43,9 @@ function renderTaskOnHTML(taskTitle, done = false) {
     }
 
     const button = document.createElement('button')
+    button.classList.add('button')
     const iconTrash = document.createElement('i')
-    iconTrash.classList.add('bi', 'bi-x-square')
+    iconTrash.classList.add('bi', 'bi-x')
     iconTrash.style.pointerEvents = 'none';
     button.appendChild(iconTrash)
     button.addEventListener('click', (event) => {
