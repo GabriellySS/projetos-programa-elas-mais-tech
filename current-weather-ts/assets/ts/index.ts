@@ -1,7 +1,29 @@
 const form = document.querySelector('#search-form')
 const input: HTMLInputElement | null = document.querySelector('#input-location')
-
 const sectionWeatherInfo = document.querySelector('#weather-data')
+
+function updateDate() {
+    const watch = document.querySelector('#watch');
+
+    if(!watch) return
+
+    const currentDate = new Date()
+    const optionsDate: Intl.DateTimeFormatOptions = {
+        weekday: 'long',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    }
+
+    const formatter = new Intl.DateTimeFormat('pt-BR', optionsDate)
+
+    watch.innerHTML = `<time datetime="${currentDate.toISOString()}">${formatter.format(currentDate)}</time>`
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateDate()
+    setInterval(updateDate, 60000)
+})
 
 form?.addEventListener('submit', async (event) => {
     event.preventDefault()
