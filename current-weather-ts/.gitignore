@@ -1,0 +1,13 @@
+# Dependências
+node_modules/
+
+# Build (Arquivos gerados pelo TypeScript)
+assets/js/*.js
+assets/js/*.map
+assets/js/*.d.ts
+
+# Logs
+npm-debug.log*
+
+# Sistema
+.DS_Store
