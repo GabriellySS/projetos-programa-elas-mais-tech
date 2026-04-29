@@ -1,1 +1,0 @@
-Site de referência: https://purplefolio.framer.website/
